@@ -1,0 +1,31 @@
+\documentclass[border=4pt]{standalone}
+\input{figures/_preamble.tex}
+
+\begin{document}
+\begin{tikzpicture}
+  % The line l.
+  \coordinate (l1) at (0,0);
+  \coordinate (l2) at (6.75,0);
+  \draw[geoline] (l1) -- (l2);
+  \node[right=3pt] at (l2) {};
+
+  % The point A, lying on the line.
+  \coordinate (A) at (2.0,0);
+  \node[point] at (A) {};
+  \node[] at ($(A)+(-0.425,-0.4)$) {};
+
+  % Concept annotations, each with a leader to what it names.
+  % All three chips sit the same distance from their target (|y| = 1.3125) and
+  % every leader is pulled back to the same 0.225 gap, so the arrows are equal
+  % length with a little breathing room before what they point at.
+  \node[namechip] (ptLab) at (2.0,1.3125) {A : Point};
+  \draw[leader] (ptLab) -- ($(A)+(0,0.225)$);
+
+  \node[namechip] (lineLab) at (5.375,1.3125) {ℓ : Line};
+  \draw[leader] (lineLab) -- (5.375,0.225);
+
+  % The incidence proposition: A lies on l.
+  \node[namechip] (inc) at (2.0,-1.3125) {LiesOn A ℓ};
+  \draw[leader] (inc) -- ($(A)+(0,-0.225)$);
+\end{tikzpicture}
+\end{document}

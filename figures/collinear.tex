@@ -1,0 +1,23 @@
+\documentclass[border=4pt]{standalone}
+\input{figures/_preamble.tex}
+
+\begin{document}
+\begin{tikzpicture}
+  % Three points that are collinear by construction.
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3.0,1.0);
+  \coordinate (C) at (6.0,2.0);
+
+  % The common line through all three, extended slightly past A and C.
+  \draw[geoline] ($(A)!-0.2!(C)$) -- ($(A)!1.2!(C)$);
+
+  % Name the line at its top-right end, offset clear of the tip.
+  \node[namechip, above right=3pt] at ($(A)!1.2!(C)$) {ℓ};
+
+  % Filled points with name chips (Plex Mono, matching the prose's inline code).
+  \foreach \p/\lab in {A/A, B/B, C/C} {
+    \node[point] at (\p) {};
+    \node[namechip, below right=4pt] at (\p) {\lab};
+  }
+\end{tikzpicture}
+\end{document}

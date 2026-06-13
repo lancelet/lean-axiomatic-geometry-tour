@@ -1,0 +1,22 @@
+\documentclass[border=4pt]{standalone}
+\input{figures/_preamble.tex}
+
+\begin{document}
+\begin{tikzpicture}
+  % The given line ℓ.
+  \coordinate (L1) at (0.4,0.4);
+  \coordinate (L2) at (5.8,2.2);
+  \draw[geoline] (L1) -- (L2);
+  \node[namechip, below right=3pt] at (L2) {ℓ};
+
+  % The point A, not on ℓ.
+  \coordinate (A) at (3.1,2.7);
+  \node[point] at (A) {};
+  \node[namechip, below right=4pt] at (A) {A};
+
+  % The unique line m through A, parallel to ℓ (same direction, shifted up so it
+  % passes through A). Dashed to highlight it as the constructed parallel.
+  \draw[geoline, dashed] (0.4,1.8) -- (5.8,3.6);
+  \node[namechip, above right=3pt] at (5.8,3.6) {m};
+\end{tikzpicture}
+\end{document}

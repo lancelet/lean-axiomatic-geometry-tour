@@ -1,0 +1,16 @@
+name = "axiomatic-geometry"
+defaultTargets = ["generate-site"]
+
+[[require]]
+name = "verso"
+git = "https://github.com/leanprover/verso"
+rev = "v4.30.0"
+
+[[lean_lib]]
+name = "AxiomaticGeometry"
+srcDir = "src"
+
+[[lean_exe]]
+name = "generate-site"
+root = "Main"
+srcDir = "src"

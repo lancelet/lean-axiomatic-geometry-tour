@@ -1,0 +1,22 @@
+\documentclass[border=4pt]{standalone}
+\input{figures/_preamble.tex}
+
+\begin{document}
+\begin{tikzpicture}
+  % Two lines, ℓ and m, crossing at the point A.
+  \coordinate (A) at (3,1.5);
+
+  % Line ℓ (lower-left → upper-right) and line m (upper-left → lower-right),
+  % both passing through A.
+  \draw[geoline] (0,0) -- (6,3);
+  \draw[geoline] (0,3) -- (6,0);
+
+  % The intersection point.
+  \node[point] at (A) {};
+
+  % Labels: each line named at its right-hand end; the point below the crossing.
+  \node[namechip, above right=3pt] at (6,3) {ℓ};
+  \node[namechip, below right=3pt] at (6,0) {m};
+  \node[namechip, below=7pt] at (A) {A};
+\end{tikzpicture}
+\end{document}

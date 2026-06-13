@@ -1,0 +1,27 @@
+\documentclass[border=4pt]{standalone}
+\input{figures/_preamble.tex}
+
+\begin{document}
+\begin{tikzpicture}
+  % Four points in general position — an irregular quadrilateral, no three
+  % collinear.
+  \coordinate (A) at (1.0,2.4);
+  \coordinate (B) at (5.2,2.9);
+  \coordinate (C) at (4.4,0.7);
+  \coordinate (D) at (1.4,0.5);
+
+  % The four lines through adjacent pairs, each extended a little past both
+  % points (lines don't terminate). The extension is kept short so the lines
+  % don't reach each other's crossings outside the quad.
+  \draw[geoline] ($(A)!-0.36!(B)$) -- ($(A)!1.36!(B)$);
+  \draw[geoline] ($(B)!-0.36!(C)$) -- ($(B)!1.36!(C)$);
+  \draw[geoline] ($(C)!-0.36!(D)$) -- ($(C)!1.36!(D)$);
+  \draw[geoline] ($(D)!-0.36!(A)$) -- ($(D)!1.36!(A)$);
+
+  % The four points, labelled outward from the centre.
+  \node[point] at (A) {}; \node[namechip, above left=2pt]  at (A) {A};
+  \node[point] at (B) {}; \node[namechip, above right=2pt] at (B) {B};
+  \node[point] at (C) {}; \node[namechip, below right=2pt] at (C) {C};
+  \node[point] at (D) {}; \node[namechip, below left=2pt]  at (D) {D};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[border=4pt]{standalone}
+\input{figures/_preamble.tex}
+
+\begin{document}
+\begin{tikzpicture}
+  % Two points joined by a line that extends beyond both.
+  \coordinate (A) at (1.6,0.6);
+  \coordinate (B) at (5.2,1.8);
+
+  % The line through A and B, extended past each end.
+  \draw[geoline] ($(A)!-0.3!(B)$) -- ($(A)!1.3!(B)$);
+
+  % Name the line at its top-right end.
+  \node[namechip, above right=3pt] at ($(A)!1.3!(B)$) {ℓ};
+
+  % The two points, joined by the line.
+  \foreach \p/\lab in {A/A, B/B} {
+    \node[point] at (\p) {};
+    \node[namechip, below right=4pt] at (\p) {\lab};
+  }
+\end{tikzpicture}
+\end{document}

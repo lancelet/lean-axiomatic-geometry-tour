@@ -1,0 +1,5 @@
+{
+  // Reload the dev-shell environment automatically when flake.nix/.envrc change,
+  // so the Lean 4 server always sees the right PATH (cc, elan toolchain, ...).
+  "direnv.restart.automatic": true
+}

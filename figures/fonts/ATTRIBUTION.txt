@@ -1,0 +1,9 @@
+Vendored fonts used to render the figures (so the figure build is self-contained
+and the labels match the website's typefaces). Both are licensed under the SIL
+Open Font License, Version 1.1 — full text in OFL.txt.
+
+- Poppins        — Copyright 2020 The Poppins Project Authors
+                   (https://github.com/itfoundry/Poppins)
+- IBM Plex Mono  — Copyright 2017 IBM Corp.
+                   (https://github.com/IBM/plex)
+                   Used here for figure labels, matching the site's code font.
